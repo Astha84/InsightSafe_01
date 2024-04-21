@@ -1,0 +1,48 @@
+<!--<?xml version="1.0" encoding="utf-8"?>-->
+<!--<menu xmlns:android="http://schemas.android.com/apk/res/android">-->
+
+<!--    <item-->
+<!--        android:id="@+id/home"-->
+<!--        android:icon="@drawable/home"-->
+<!--        android:title="@string/title_home" />-->
+
+<!--    <item-->
+<!--        android:id="@+id/file"-->
+<!--        android:icon="@drawable/file"-->
+<!--        android:title="Report" />-->
+
+<!--    <item-->
+<!--        android:id="@+id/add"-->
+<!--        android:icon="@drawable/add"-->
+<!--        android:title="Add" />-->
+<!--    <item-->
+<!--        android:id="@+id/notification"-->
+<!--        android:icon="@drawable/notification"-->
+<!--        android:title="Notifications" />-->
+<!--    <item-->
+<!--        android:id="@+id/chatbot"-->
+<!--        android:icon="@drawable/chatbot"-->
+<!--        android:title="Chatbot" />-->
+
+
+<!--</menu>-->
+
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/home"
+        android:title="Home"
+        android:icon="@drawable/home" />
+    <item android:id="@+id/report_menu"
+        android:title="Reports"
+        android:icon="@drawable/file" />
+    <item android:id="@+id/favorites"
+        android:title="Add"
+        android:icon="@drawable/add" />
+
+    <item android:id="@+id/notification_menu"
+        android:title="Alert"
+        android:icon="@drawable/notification" />
+    <item android:id="@+id/profile"
+        android:title="Chatbot"
+        android:icon="@drawable/chatbot" />
+
+</menu>

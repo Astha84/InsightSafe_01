@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Add_activity">
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/google_map_2"
+        android:name="com.google.android.gms.maps.SupportMapFragment"
+        android:layout_width="match_parent"
+
+        android:layout_height="200dp" />
+    <EditText
+        android:id="@+id/editText_2"
+        android:layout_width="wrap_content"
+        android:layout_height="60dp"
+        android:layout_below="@id/google_map_2"
+        android:hint="Search Location Here" />
+    <Button
+        android:layout_toRightOf="@+id/editText_2"
+        android:id="@+id/search_button_2"
+        android:layout_width="wrap_content"
+        android:layout_below="@id/google_map_2"
+        android:layout_height="60dp"
+
+        android:text="Search" />
+    <LinearLayout
+        android:id="@+id/add_id"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/editText_2"
+        android:orientation="horizontal">
+
+        <DatePicker
+            android:id="@+id/date_picker"
+            android:layout_width="10dp"
+            android:layout_height="303dp"
+            android:layout_below="@+id/editText_2"
+            android:layout_alignParentLeft="true"
+            android:layout_weight=".5"
+            android:calendarViewShown="true"
+            android:spinnersShown="false" />
+
+        <TimePicker
+            android:id="@+id/time_picker"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_below="@id/editText_2"
+            android:layout_alignParentLeft="true"
+            android:layout_toRightOf="@+id/date_picker"
+            android:layout_weight=".5" />
+    </LinearLayout>
+    <Spinner
+        android:id="@+id/static_spinner"
+        android:layout_width="fill_parent"
+        android:layout_height="60dp"
+        android:layout_marginBottom="0dp"
+        android:layout_below="@+id/add_id"
+        android:layout_marginTop="10dp"
+
+        />
+    <EditText
+        android:id="@+id/details_id"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/static_spinner"
+        android:hint="Add Details"
+
+        />
+    <Button
+        android:id="@+id/photo_id"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/details_id"
+        android:text="Add Photos/Videos"
+        />
+
+    <CheckBox
+        android:id="@+id/checkBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/photo_id"
+        android:text="Report as Anonymous"
+        android:layout_marginTop="0dp"
+        android:textSize="18sp" />
+    <LinearLayout
+        android:id="@+id/add_2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/checkBox"
+        >
+
+        <Button
+            android:id="@+id/cancel_id"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_alignParentLeft="true"
+            android:layout_weight=".5"
+            android:layout_marginRight="30dp"
+            android:text="Cancel"
+
+
+            />
+        <Button
+            android:id="@+id/submit_id"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_alignParentLeft="true"
+            android:layout_weight=".5"
+            android:layout_marginLeft="30dp"
+            android:text="Submit Report"
+
+        />
+
+
+
+    </LinearLayout>
+
+
+
+
+
+
+</RelativeLayout>
