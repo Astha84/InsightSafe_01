@@ -45,6 +45,7 @@ public class NearbyHospitalsManager {
                             Geocoder gcd = new Geocoder( context, Locale.getDefault());
 
 
+
                             List<Address> addresses = null;
                             try {
                                 addresses = gcd.getFromLocation(placeLat, placeLng, 1);
@@ -88,6 +89,7 @@ public class NearbyHospitalsManager {
     }
 
 }
+
 
 
 

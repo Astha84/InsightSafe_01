@@ -1,6 +1,7 @@
 package com.example.firstapp;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -67,6 +68,14 @@ public class MainActivity extends AppCompatActivity {
 //                                        }
 
                                     } else {
+
+                                        SharedPreferences sharedPreferences = getSharedPreferences("MySharedPref",MODE_PRIVATE);
+                                        SharedPreferences.Editor myEdit = sharedPreferences.edit();
+
+                                        myEdit.putString("email",Email );
+
+                                        myEdit.commit();
+
                                         MainActivity.this.startActivity(new Intent(MainActivity.this, Menu.class));
                                         MainActivity.this.finish();
                                     }

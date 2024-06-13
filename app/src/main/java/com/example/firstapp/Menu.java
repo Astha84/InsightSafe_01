@@ -3,6 +3,7 @@ package com.example.firstapp;
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.MenuItem;
 //import android.widget.Toolbar;
 
@@ -58,6 +59,7 @@ public class Menu extends AppCompatActivity implements NavigationView.OnNavigati
                     return true;
                 }
                 else if (menuItemId ==  R.id.report_menu) {
+                    Log.d("SDDS","queer");
                     replaceFragment(new ReportsFragment());
                     return true;
                 }

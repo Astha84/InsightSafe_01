@@ -6,13 +6,37 @@
     tools:ignore="HardcodedText"
     >
 
+
     <item
-        android:id="@+id/about_us"
-        android:title="Anbout Us" />
+        android:id="@+id/notify"
+        android:title="Trends" />
+
+    <item
+        android:id="@+id/bookmark"
+        android:title="Bookmarked Reports" />
+
+    <item
+        android:id="@+id/recent"
+        android:title="Recently Viewed Reports" />
+    <item
+        android:id="@+id/loc"
+        android:title="Alert Locations" />
+
+
+
+
 
     <item
         android:id="@+id/support"
         android:title="Support and FAQs" />
+    <item
+        android:id="@+id/about_us"
+        android:title="About Us" />
+
+
+    <item
+        android:id="@+id/logout"
+        android:title="Log Out" />
 
     <item
         android:id="@+id/terms"

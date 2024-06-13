@@ -3,12 +3,31 @@ package com.example.firstapp.fragments;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.DefaultItemAnimator;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.FrameLayout;
+import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import com.example.firstapp.R;
+import com.example.firstapp.ReportInfo;
+import com.example.firstapp.ReportInfoAdapter;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.Locale;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -25,6 +44,7 @@ public class ReportsFragment extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
+    private static RecyclerView.Adapter adapter;
 
     public ReportsFragment() {
         // Required empty public constructor
@@ -61,6 +81,57 @@ public class ReportsFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_reports, container, false);
+        View view=inflater.inflate(R.layout.fragment_reports, container, false);
+
+        RecyclerView recyclerView = (RecyclerView) view.findViewById(R.id.recycler1);
+        recyclerView.setHasFixedSize(true);
+
+        LinearLayoutManager layoutManager = new LinearLayoutManager(view.getContext());
+        recyclerView.setLayoutManager(layoutManager);
+        recyclerView.setItemAnimator(new DefaultItemAnimator());
+
+
+
+
+
+        FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
+        DatabaseReference databaseReference = firebaseDatabase.getReference("ReportInfo").child("Reporting");
+
+// Read from the database
+        ArrayList<ReportInfo> data = new ArrayList<ReportInfo>();
+
+        databaseReference.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                // This method is called once with the initial value and whenever data at this location is updated.
+                // Get the value from the dataSnapshot
+                for (DataSnapshot childSnapshot : dataSnapshot.getChildren()) {
+                    // Get the value from each child node
+                    ReportInfo value = childSnapshot.getValue(ReportInfo.class);
+                    data.add(value);
+
+
+
+
+
+
+                }
+                adapter = new ReportInfoAdapter(data);
+                recyclerView.setAdapter(adapter);
+            }
+            @Override
+            public void onCancelled(DatabaseError error) {
+                // Failed to read value
+                Log.w("Niyati", "Failed to read value.", error.toException());
+            }
+        });
+
+
+
+
+
+
+
+        return view;
     }
 }
